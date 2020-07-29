@@ -1,0 +1,42 @@
+.cp-gnav{
+    border: 1px solid teal;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cp-gnav__list{
+    border: 1px solid teal;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 20px;
+}
+
+.cp-gnav__listItem{
+    border: 1px solid teal;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 20px;
+}
+
+.cp-gnav__listItemA{
+    border: 1px solid teal;
+    color: #333;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    height: 100%;
+}
