@@ -1,0 +1,25 @@
+.button__1{
+    text-decoration: none;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 0 1px #e871a6;
+    box-shadow: 0 0 0 1px #e871a6;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 18px 0;
+    color: #fff;
+    position: relative;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e871a6), color-stop(50%, #ffffff));
+    background: linear-gradient(to right, #e871a6 50%, #ffffff 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e871a6', endColorstr='#ffffff', GradientType=1);
+    background-position: 0 0;
+    background-size: 200% auto;
+    -webkit-transition: .2s;
+    transition: .2s;
+    max-width: 260px;
+    border: 1px solid blue;
+}

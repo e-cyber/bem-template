@@ -1,0 +1,19 @@
+.cp-footerNav{
+    border: 1px solid navy;
+    
+}
+.cp-footerNav__row{
+    border: 1px solid navy;
+    display: flex;
+    justify-content: space-between;
+}
+.cp-footerNav__col.is-2col{
+    border: 1px solid navy;
+    -webkit-transition: .2s;
+    transition: .2s;
+    width: 48.333333333333336%;
+}
+.cp-footerNav__col.is-3col{
+    border: 1px solid navy;
+    width: 31.666666666666664%;
+}
