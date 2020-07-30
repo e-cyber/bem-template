@@ -1,7 +1,7 @@
 # bem-template
 
 ## プレビュー
-https://e-cyber.github.io/bem-template/docs/
+https://e-cyber.github.io/bem-template/
 
 ## ローカル立ち上げ方
 

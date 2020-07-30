@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div style="display: flex; ">
-        <div style="width: 300px;">
+<body style="position: relative">
+    <div style="position: absolute;bottom :10px; left: 10px;">
+        <input type="checkbox" id="checkbox" checked="checked">
+        <label id="button" for="checkbox" style="filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.6));display: block;  border-radius: 50%; color: #fff; box-sizing: border-box; height: 44px; width: 44px;text-align: center;line-height :44px;"></label>
+        <div id="menu" style="padding: 0 20px; width: 300px;position :absolute;bottom:100%; left:0;">
             <p><a href="./top.html" target="mainIframe">TOP</a></p>
             <dl>
                 <dt>ヘッダー</dt>
@@ -16,9 +18,32 @@
                 <dd><a href="./nihei/" target="mainIframe">二瓶版</a></dd>
             </dl>
         </div>
-        <div style="width: calc(100% - 300px); ">
-            <iframe src="top.html" name="mainIframe" style="display: block; min-height: calc(100vh - 30px); width: 100%;"></iframe>
-        </div>
     </div>
+    <iframe src="top.html" name="mainIframe" style="display: block; width: -webkit-fill-available; min-height: calc(100vh - 24px);"></iframe>
+    <style>
+        #checkbox{
+            display:none;
+        }
+        #button{
+            background-color: #ccc;
+        }
+        #button::before{
+            content: "+";
+        }
+        #checkbox:checked + #button{
+            background-color: #f00;
+        }
+        #checkbox:checked + #button::before{
+            content: "x";
+        }
+        #menu{
+            display: none;
+            background-color: #fff;
+            filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.3));
+        }
+        #checkbox:checked + #button + #menu{
+            display: block;
+        }
+    </style>
 </body>
 </html>
