@@ -1,0 +1,23 @@
+{
+  "name": "bem-template",
+  "version": "1.0.0",
+  "description": "プレビュー\r https://e-cyber.github.io/bem-template/docs/",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/e-cyber/bem-template/issues"
+  },
+  "homepage": "https://github.com/e-cyber/bem-template#readme",
+  "devDependencies": {
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
