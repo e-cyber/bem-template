@@ -1,4 +1,4 @@
 # bem-template
 
 プレビュー
-https://e-cyber.github.io/bem-template/
+https://e-cyber.github.io/bem-template/docs/
