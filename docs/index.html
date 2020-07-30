@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html lang="ja" style="padding: 0; margin: 0;">
+<html lang="ja" style="padding: 0; margin: 0;-webkit-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+text-size-adjust: 100%;
+font-size: 62.5%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body style="position: relative; padding: 0; margin: 0;height: 100vh; width: 100vw; overflow: hidden;">
-    <div style="position: absolute;bottom :10px; left: 10px;">
-        <input type="checkbox" id="checkbox" checked="checked">
-        <label id="button" for="checkbox" style="filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.6));display: block;  border-radius: 50%; color: #fff; box-sizing: border-box; height: 44px; width: 44px;text-align: center;line-height :44px;"></label>
-        <div id="menu" style="padding: 0 20px; width: 300px;position :absolute;bottom:100%; left:0;">
-            <p><a href="./top.html" target="mainIframe">TOP</a></p>
-            <dl>
-                <dt>ヘッダー</dt>
-                <dd><a href="./header-01/" target="mainIframe">gNav・検索窓 一体型</a></dd>
-                <dt>テスト</dt>
-                <dd><a href="./nihei/" target="mainIframe">二瓶版</a></dd>
-            </dl>
-        </div>
-    </div>
-    <iframe src="top.html" name="mainIframe" style="display: block; width: 100%; min-height: 100vh;border: 0;"></iframe>
     <style>
         #checkbox{
             display:none;
         }
         #button{
-            background-color: #ccc;
+            background-color: #2cb696;
         }
         #button::before{
             content: "+";
         }
         #checkbox:checked + #button{
-            background-color: #2cb696;
+            background-color: #444;
         }
         #checkbox:checked + #button::before{
             content: "x";
@@ -45,5 +33,23 @@
             display: block;
         }
     </style>
+</head>
+<!-- <body style="position: relative; padding: 0; margin: 0;height: 100vh; width: 100vw; overflow: hidden;"> -->
+<body style="position: relative; padding: 0; margin: 0;">
+    <div style="position: absolute;bottom :10px; left: 10px;">
+        <input type="checkbox" id="checkbox" checked="checked">
+        <label id="button" for="checkbox" style="filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.6));display: block;  border-radius: 50%; color: #fff; box-sizing: border-box; height: 44px; width: 44px;text-align: center;line-height :44px;"></label>
+        <div id="menu" style="padding: 0 20px; width: 300px;position :absolute;bottom:100%; left:0;font-size: 1.4rem;">
+            <p><a href="./top.html" target="mainIframe">TOP</a></p>
+            <dl>
+                <dt>ヘッダー</dt>
+                <dd><a href="./header-01/" target="mainIframe">gNav・検索窓 一体型</a></dd>
+                <dt>テスト</dt>
+                <dd><a href="./nihei/" target="mainIframe">二瓶版</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- <iframe src="top.html" name="mainIframe" style="display: block; width: 100%; min-height: 100vh;border: 0;"></iframe> -->
+    <iframe src="top.html" name="mainIframe" style="display: block; width: 100%; min-height: 100vh;border: 0;"></iframe>
 </body>
 </html>
