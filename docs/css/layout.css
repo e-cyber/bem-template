@@ -1,45 +1,35 @@
 .l-header{
-    border: 1px solid yellow;
 
 }
 .l-header__inner{
-    border: 1px solid yellow;
 }
 
 .l-main{
-    border: 1px solid yellow;
 }
 .l-main.is-cp-footerNav{
-    border: 1px solid yellow;
     background: #fefef6;
 }
 
 .l-main__inner{
-    border: 1px solid yellow;
     max-width: 1080px;
     margin: 0 auto;
 }
 .l-main__inner.is-wide{
-    border: 1px solid yellow;
     max-width: initial;
 }
 
 .l-mt12{
-    border: 1px solid yellow;
     margin-top:12px;
 }
 
 .l-mt24{
-    border: 1px solid yellow;
     margin-top:24px;
 }
 
 .l-mt36{
-    border: 1px solid yellow;
     margin-top:36px;
 }
 
 .l-mt48{
-    border: 1px solid yellow;
     margin-top:48px;
 }
