@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/bem-template/css/reset.css" >
+    <link rel="stylesheet" type="text/css" href="/bem-template/css/layout.css" >
+    <link rel="stylesheet" type="text/css" href="/bem-template/css/form.css" >
+    <link rel="stylesheet" type="text/css" href="/bem-template/css/button.css" >
+</head>
+<body>
+    <header class="l-header">
+        <div class="l-header__inner">
+            <div class="cp-header">
+                <div class="cp-header__body">            
+                    <div class="cp-header__logo"><a href="#" class="cp-header__logoA"><img src="https://placehold.jp/280x50.png" class="cp-header__logo-img"></a></div>
+                    <div class="cp-header__gnav">
+                        <nav class="cp-gnav">
+                            <ul class="cp-gnav__list">
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">学校紹介</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">学び・カリキュラム</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">キャンパスライフ</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">進路・就職</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">入学案内</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">卒業生の方</a></li>
+                                <li class="cp-gnav__listItem"><a href="#" class="cp-gnav__listItemA">在校生の方</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="cp-header__menu">
+                        <div class="cp-header__menuSearch"><a href="" class="cp-header__menuSearchBtn"></a></div>
+                        <div class="cp-header__menuOc"><a href="" class="cp-header__menuOcBtn"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-search">
+                <div class="form__row">
+                    <div class="form__col is-w300"><input type="text" name="" class="form__inputText"></div>
+                    <div class="form__col is-btn"><input type="submit" name="" class="button__search"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+<style>
+    .cp-header__body{
+    border: 1px solid green;
+    margin: 0 auto;
+    max-width: 1900px;
+    padding: 0 0 0 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cp-header__logo{}
+
+.cp-header__menu{
+    border: 1px solid green;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.cp-gnav{
+    border: 1px solid teal;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cp-gnav__list{
+    border: 1px solid teal;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 20px;
+}
+
+.cp-gnav__listItem{
+    border: 1px solid teal;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 20px;
+}
+
+.cp-gnav__listItemA{
+    border: 1px solid teal;
+    color: #333;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    height: 100%;
+}
+
+</style>
+</html>
