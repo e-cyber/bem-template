@@ -1,7 +1,7 @@
 {
   "name": "bem-template",
   "version": "1.0.0",
-  "description": "プレビュー\r https://e-cyber.github.io/bem-template/docs/",
+  "description": "プレビュー\r https://e-cyber.github.io/bem-template/",
   "main": "index.js",
   "directories": {
     "doc": "docs"
