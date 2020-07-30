@@ -1,13 +1,10 @@
 .form__row{
-    border: 1px solid aqua;
     display: flex;
 }
 .form__col{
-    border: 1px solid aqua;
     
 }
 .form__inputText{
-    border: 1px solid aqua;
     display: block;
     font-size: 16px;
     padding: 6px;

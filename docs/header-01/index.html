@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/bem-template/css/reset.css" >
-    <link rel="stylesheet" type="text/css" href="/bem-template/css/layout.css" >
-    <link rel="stylesheet" type="text/css" href="/bem-template/css/form.css" >
-    <link rel="stylesheet" type="text/css" href="/bem-template/css/button.css" >
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" >
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" >
+    <link rel="stylesheet" type="text/css" href="../css/form.css" >
+    <link rel="stylesheet" type="text/css" href="../css/button.css" >
+    <style>
+    [id="body"] > * {
+        background-color: #fff;
+    }
+    </style>
 </head>
-<body>
+<body id="body" style="background-position: 0px 0px, 8px 8px;
+background-size: 16px 16px;
+background-image: -webkit-linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc 100%),-webkit-linear-gradient(45deg, #ccc 25%, white 25%, white 75%, #ccc 75%, #eee 100%);
+background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc 100%),linear-gradient(45deg, #ccc 25%, white 25%, white 75%, #ccc 75%, #ccc 100%);">
     <header class="l-header">
         <div class="l-header__inner">
             <div class="cp-header">
                 <div class="cp-header__body">            
-                    <div class="cp-header__logo"><a href="#" class="cp-header__logoA"><img src="https://placehold.jp/280x50.png" class="cp-header__logo-img"></a></div>
+                    <div class="cp-header__logo"><a href="#" class="cp-header__logoA"><img src="https://placehold.jp/280x50.png" class="cp-header__logoImg"></a></div>
                     <div class="cp-header__gnav">
                         <nav class="cp-gnav">
                             <ul class="cp-gnav__list">
@@ -30,21 +38,28 @@
                     </div>
                     <div class="cp-header__menu">
                         <div class="cp-header__menuSearch"><a href="" class="cp-header__menuSearchBtn"></a></div>
-                        <div class="cp-header__menuOc"><a href="" class="cp-header__menuOcBtn"></a></div>
+                        <div class="cp-header__menuOc"><a href="" class="cp-header__menuOcBtn">オープンキャンパス<br>学校説明会</a></div>
                     </div>
-                </div>
-            </div>
-            <div class="cp-search">
-                <div class="form__row">
-                    <div class="form__col is-w300"><input type="text" name="" class="form__inputText"></div>
-                    <div class="form__col is-btn"><input type="submit" name="" class="button__search"></div>
                 </div>
             </div>
         </div>
     </header>
+    <div class="cp-search">
+        <div class="cp-search__body">
+            <div class="form__row">
+                <div class="form__col is-w300"><input type="text" name="" class="form__inputText"></div>
+                <div class="form__col is-btn"><input type="submit" name="" class="button__search"></div>
+            </div>
+        </div>
+        <div class="cp-search__btn">aa
+        </div>
+    </div>
 </body>
 <style>
-    .cp-header__body{
+.cp-header{
+    background-color: #fff;
+}
+.cp-header__body{
     margin: 0 auto;
     max-width: 1900px;
     padding: 0 0 0 20px;
@@ -56,10 +71,21 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+}
+.cp-header__logo{
+    margin-right: auto;
+    max-width: 280px;
     width: 100%;
 }
+.cp-header__logoImg{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
-.cp-header__logo{}
+.cp-header__gnav{
+    margin: 0 auto;
+}
 
 .cp-header__menu{
     display: -webkit-box;
@@ -71,7 +97,79 @@
     -ms-flex-align: center;
     align-items: center;
     margin-left: auto;
-    margin-right: 20px;
+}
+.cp-header__menuSearch{
+}
+.cp-header__menuSearchBtn{
+    width:54px;
+    height: 54px;
+    display: block;
+    position: relative;
+}
+.cp-header__menuSearchBtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    border: 1px solid #e871a6;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.cp-header__menuSearchBtn::after{
+    content: '';
+    position: absolute;
+    margin: auto;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background: url(./search.svg) no-repeat center center;
+    background-size: 20px 20px;
+}
+.cp-header__menuOc{
+    margin-left: 26px;
+}
+.cp-header__menuOcBtn{
+    border-radius: 0;
+    white-space: nowrap;
+    padding: 16px 10px;
+    background: #e871a6;
+    display: block;
+    width: 160px;
+}
+@media screen and (max-width: 1280px) and (min-width: 960px){
+    .cp-header__menu{
+        flex-basis: 207px;
+        min-width: 207px;
+    }
+    .cp-header__menuOc{
+        margin-left: 13px;
+    }
+    .cp-header__menuOcBtn {
+        width: 130px;
+        font-size: 1.4rem;
+        padding: 18px 5px;
+    }
+}
+@media only screen and (max-width: 959px){
+    .cp-header__body{
+        padding: 13px 15px 14px;
+    }
+    .cp-header__logo{
+        max-width: 185px;
+    }
+    .cp-header__menu {
+        display: none;
+    }
 }
 .cp-gnav{
     margin: 0 auto;
@@ -83,6 +181,7 @@
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    max-width: 880px;
 }
 
 .cp-gnav__list{
@@ -94,11 +193,14 @@
 }
 
 .cp-gnav__listItem{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 20px;
+    white-space: nowrap;
+    margin-right: 40px;
+    font-size: 1.6rem;
+    letter-spacing: -.02em;
+}
+
+.cp-gnav__listItem:last-of-type {
+    margin-right: 0;
 }
 
 .cp-gnav__listItemA{
@@ -111,6 +213,37 @@
     transition: all .2s ease-in;
     height: 100%;
 }
-
+.cp-gnav__listItemA::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    width: 20px;
+    margin: 0 auto;
+    height: 2px;
+    background: #e871a6;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+@media screen and (max-width: 1280px) and (min-width: 960px){
+    .cp-gnav__listItem {
+        font-size: 1.4rem;
+        margin: 0 10px 0 0;
+    }
+}
+@media only screen and (max-width: 959px){
+    .cp-gnav {
+        display: none;
+    }
+}
+.cp-search__body{
+    display: none;
+}
+.cp-search__btn{
+    display: none;
+}
 </style>
 </html>
