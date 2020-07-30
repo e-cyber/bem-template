@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" style="-webkit-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+text-size-adjust: 100%;font-size: 62.5%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/jQuery.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/reset.css" >
     <link rel="stylesheet" type="text/css" href="../css/layout.css" >
     <link rel="stylesheet" type="text/css" href="../css/form.css" >
-    <link rel="stylesheet" type="text/css" href="../css/button.css" >
     <style>
     [id="body"] > * {
         background-color: #fff;
@@ -18,11 +21,303 @@
 background-size: 16px 16px;
 background-image: -webkit-linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc 100%),-webkit-linear-gradient(45deg, #ccc 25%, white 25%, white 75%, #ccc 75%, #eee 100%);
 background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc 100%),linear-gradient(45deg, #ccc 25%, white 25%, white 75%, #ccc 75%, #ccc 100%);">
+
+    <style>
+        .cp-header{
+            width: 100%;
+            background-color: #fff;
+            position: relative;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .cp-header__body{
+            margin: 0 auto;
+            max-width: 1900px;
+            padding: 0 0 0 20px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .cp-header__logo{
+            margin-right: auto;
+            max-width: 280px;
+            width: 100%;
+        }
+        .cp-header__logoImg{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .cp-header__gnav{
+            margin: 0 auto;
+        }
+        
+        .cp-header__menu{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-left: auto;
+        }
+        .cp-header__menuSearchBtn{
+            width:54px;
+            height: 54px;
+            display: block;
+            position: relative;
+            -webkit-transition: .2s;
+            transition: .2s;
+        }
+        .cp-header__menuSearchBtn::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 100%;
+            border: 1px solid #e871a6;
+            -webkit-transition: .2s;
+            transition: .2s;
+        }
+        .cp-header__menuSearchBtn::after{
+            content: '';
+            position: absolute;
+            margin: auto;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            background: url(./search.svg) no-repeat center center;
+            background-size: 20px 20px;
+        }
+        .cp-header__menuSearchBtn.is-open{
+            width:54px;
+            height: 54px;
+            display: block;
+            position: relative;
+        }
+        .cp-header__menuSearchBtn.is-open::after{
+            width: 16px;
+            height: 16px;
+            background: url(./search_close.svg) center center no-repeat;
+            background-size: 16px 16px;
+        }
+        .cp-header__menuOc{
+            margin-left: 26px;
+        }
+        .cp-header__menuOcBtn{
+            border-radius: 0;
+            white-space: nowrap;
+            padding: 16px 10px;
+            background: #e871a6;
+            display: inline-block;
+            width: 160px;
+            min-width: 160px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align:center;
+        }
+        .cp-header__menuOcBtn:hover{
+            background: #e03f87;
+            color: #fff;
+        }
+        @media screen and (min-width: 960px){
+            .cp-header__menuSearchBtn:hover::before{
+                background: #e871a6;
+                border: 1px solid #e871a6;
+            }
+            .cp-header__menuSearchBtn:hover::after{
+                width: 20px;
+                height: 20px;
+                background: url(./search_white.svg) no-repeat center center;
+                background-size: 20px 20px;
+            }
+            .cp-header__menuSearchBtn.is-open:hover::before{
+                background-color: #fff;
+            }
+            .cp-header__menuSearchBtn.is-open:hover::after{
+                width: 16px;
+                height: 16px;
+                background: url(./search_close.svg) center center no-repeat;
+                background-size: 16px 16px;
+            }
+        }
+        @media screen and (max-width: 1280px) and (min-width: 960px){
+            .cp-header__menu{
+                flex-basis: 207px;
+                min-width: 207px;
+            }
+            .cp-header__menuOc{
+                margin-left: 13px;
+            }
+            .cp-header__menuOcBtn {
+                width: 130px;
+                min-width: 130px;
+                font-size: 1.4rem;
+                padding: 18px 5px;
+            }
+        }
+        @media only screen and (max-width: 959px){
+            .cp-header__body{
+                padding: 13px 15px 14px;
+            }
+            .cp-header__logo{
+                max-width: 185px;
+            }
+            .cp-header__menu {
+                display: none;
+            }
+        }
+        .cp-gnav{
+            margin: 0 auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            max-width: 880px;
+        }
+        
+        .cp-gnav__list{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 20px;
+        }
+        
+        .cp-gnav__listItem{
+            white-space: nowrap;
+            margin-right: 40px;
+            font-size: 1.6rem;
+            letter-spacing: -.02em;
+        }
+        
+        .cp-gnav__listItem:last-of-type {
+            margin-right: 0;
+        }
+        
+        .cp-gnav__listItemA{
+            color: #333;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+            -webkit-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+            height: 100%;
+        }
+        .cp-gnav__listItemA::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            width: 20px;
+            margin: 0 auto;
+            height: 2px;
+            background: #e871a6;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: .2s;
+            transition: .2s;
+        }
+        @media screen and (min-width: 960px){
+            .cp-gnav__listItemA:hover::after{
+                top: 30px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        @media screen and (max-width: 1280px) and (min-width: 960px){
+            .cp-gnav__listItem {
+                font-size: 1.4rem;
+                margin: 0 10px 0 0;
+            }
+        }
+        @media only screen and (max-width: 959px){
+            .cp-gnav {
+                display: none;
+            }
+        }
+        .cp-search{
+            position: absolute;
+            z-index: 150;
+            top: 0;
+            right: 0;
+            width: 100%;
+            background: #e871a6;
+            -webkit-transition: -webkit-transform .4s;
+            transition: -webkit-transform .4s;
+            transition: transform .4s;
+            transition: transform .4s, -webkit-transform .4s;
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+            border-top: 1px solid #ddd;
+            padding: 59px 0 60px;
+        }
+        .cp-search.is-open{
+            transform: translateY(80px);
+        }
+        .cp-search__body{
+            overflow: hidden;
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background: #fff;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cp-search__input{
+            border: none;
+            width: 88.9888%;
+            padding: 15px;
+            margin: 5px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .cp-search__submit{
+            -webkit-transition: .2s;
+            transition: .2s;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-indent: -9999px;
+            cursor: pointer;
+            border: none;
+            width: 60px;
+            height: 60px;
+            background: #e03f87 url(./search_white.svg) center center no-repeat;
+            background-size: 28px 28px;
+        }
+    </style>
     <header class="l-header">
         <div class="l-header__inner">
             <div class="cp-header">
                 <div class="cp-header__body">            
-                    <div class="cp-header__logo"><a href="#" class="cp-header__logoA"><img src="https://placehold.jp/280x50.png" class="cp-header__logoImg"></a></div>
+                    <div class="cp-header__logo"><a href="#" class="cp-header__logoA"><img src="https://placehold.jp/280x50.png" class="cp-header__logoImg" width="280" height="50"></a></div>
                     <div class="cp-header__gnav">
                         <nav class="cp-gnav">
                             <ul class="cp-gnav__list">
@@ -37,213 +332,69 @@ background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 
                         </nav>
                     </div>
                     <div class="cp-header__menu">
-                        <div class="cp-header__menuSearch"><a href="" class="cp-header__menuSearchBtn"></a></div>
-                        <div class="cp-header__menuOc"><a href="" class="cp-header__menuOcBtn">オープンキャンパス<br>学校説明会</a></div>
+                        <div class="cp-header__menuSearch"><a href="javascript:boid(0)" class="cp-header__menuSearchBtn js-cp-search__btn"></a></div>
+                        <div class="cp-header__menuOc"><a href="" class="cp-header__menuOcBtn" >オープンキャンパス<br>学校説明会</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="cp-search">
-        <div class="cp-search__body">
-            <div class="form__row">
-                <div class="form__col is-w300"><input type="text" name="" class="form__inputText"></div>
-                <div class="form__col is-btn"><input type="submit" name="" class="button__search"></div>
+    <div class="cp-search js-cp-search__wrap">
+        <form action="/search.html">
+            <div class="cp-search__body">
+                <input type="text" name="q" class="cp-search__input">
+                <input type="submit" value="検索" class="cp-search__submit" disabled>
             </div>
-        </div>
-        <div class="cp-search__btn">aa
-        </div>
+        </form>
     </div>
+    <script>
+        $(function(){
+
+            /* ----------------------------------------------------------------------------------
+            検索フォームを出す
+            ---------------------------------------------------------------------------------- */
+            var scrCount;
+            var headerHeight;
+            var elems = '.searchArea';
+            var className = 'slideDown';
+            var searchBtn = '#searchBtn';
+            $(document).on('click', searchBtn, function () {
+            headerHeight = $('.header').outerHeight();
+            if ($(elems).hasClass(className)) {
+                $(this).find('a').removeClass('active');
+                $(elems).removeClass(className).css('transform', 'translateY(-100%)');
+            } else {
+                $(this).find('a').addClass('active');
+                $(elems).addClass(className).css('transform', 'translateY(' + headerHeight + 'px)');
+            }
+            // 要素にフォーカスを与える
+            document.getElementById('pcInput').focus();
+            return false;
+            });
+            $(window).on('resize', function () {
+                var responsibleCheck = $('#responsibleCheck').width();
+                if (responsibleCheck == 2) {
+                    $(searchBtn).find('a').removeClass('active');
+                    $(elems).removeClass(className).css('transform', 'translateY(-100%)');
+                }
+            });
+            
+            /* ----------------------------------------------------------------------------------
+            検索入力に値がなかったらsubmitさせない
+            ---------------------------------------------------------------------------------- */
+            function submitOn(textelem, submitElem) {
+                $(document).on('blur keydown keyup keypress change', textelem, function () {
+                    if ($(this).val() == '') {
+                    $(submitElem).attr('disabled', 'disabled');
+                    } else {
+                    $(submitElem).removeAttr('disabled');
+                    }
+                });
+            }
+            // 実行
+            submitOn('.searchArea input[type="text"]', '.searchArea .submitBtn');
+            submitOn('.searchSpArea input[type="text"]', '.searchSpArea .submitBtn');
+        })
+    </script>
 </body>
-<style>
-.cp-header{
-    background-color: #fff;
-}
-.cp-header__body{
-    margin: 0 auto;
-    max-width: 1900px;
-    padding: 0 0 0 20px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.cp-header__logo{
-    margin-right: auto;
-    max-width: 280px;
-    width: 100%;
-}
-.cp-header__logoImg{
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.cp-header__gnav{
-    margin: 0 auto;
-}
-
-.cp-header__menu{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: auto;
-}
-.cp-header__menuSearch{
-}
-.cp-header__menuSearchBtn{
-    width:54px;
-    height: 54px;
-    display: block;
-    position: relative;
-}
-.cp-header__menuSearchBtn::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto 0;
-    width: 52px;
-    height: 52px;
-    border-radius: 100%;
-    border: 1px solid #e871a6;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-.cp-header__menuSearchBtn::after{
-    content: '';
-    position: absolute;
-    margin: auto;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background: url(./search.svg) no-repeat center center;
-    background-size: 20px 20px;
-}
-.cp-header__menuOc{
-    margin-left: 26px;
-}
-.cp-header__menuOcBtn{
-    border-radius: 0;
-    white-space: nowrap;
-    padding: 16px 10px;
-    background: #e871a6;
-    display: block;
-    width: 160px;
-}
-@media screen and (max-width: 1280px) and (min-width: 960px){
-    .cp-header__menu{
-        flex-basis: 207px;
-        min-width: 207px;
-    }
-    .cp-header__menuOc{
-        margin-left: 13px;
-    }
-    .cp-header__menuOcBtn {
-        width: 130px;
-        font-size: 1.4rem;
-        padding: 18px 5px;
-    }
-}
-@media only screen and (max-width: 959px){
-    .cp-header__body{
-        padding: 13px 15px 14px;
-    }
-    .cp-header__logo{
-        max-width: 185px;
-    }
-    .cp-header__menu {
-        display: none;
-    }
-}
-.cp-gnav{
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    max-width: 880px;
-}
-
-.cp-gnav__list{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 20px;
-}
-
-.cp-gnav__listItem{
-    white-space: nowrap;
-    margin-right: 40px;
-    font-size: 1.6rem;
-    letter-spacing: -.02em;
-}
-
-.cp-gnav__listItem:last-of-type {
-    margin-right: 0;
-}
-
-.cp-gnav__listItemA{
-    color: #333;
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    line-height: 1;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    height: 100%;
-}
-.cp-gnav__listItemA::after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    content: '';
-    width: 20px;
-    margin: 0 auto;
-    height: 2px;
-    background: #e871a6;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-@media screen and (max-width: 1280px) and (min-width: 960px){
-    .cp-gnav__listItem {
-        font-size: 1.4rem;
-        margin: 0 10px 0 0;
-    }
-}
-@media only screen and (max-width: 959px){
-    .cp-gnav {
-        display: none;
-    }
-}
-.cp-search__body{
-    display: none;
-}
-.cp-search__btn{
-    display: none;
-}
-</style>
 </html>
