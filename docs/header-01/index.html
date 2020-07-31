@@ -133,10 +133,6 @@ background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 
             color: #fff;
             text-align:center;
         }
-        .cp-header__menuOcBtn:hover{
-            background: #e03f87;
-            color: #fff;
-        }
         @media screen and (min-width: 960px){
             .cp-header__menuSearchBtn:hover::before{
                 background: #e871a6;
@@ -156,6 +152,10 @@ background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 
                 height: 16px;
                 background: url(./search_close.svg) center center no-repeat;
                 background-size: 16px 16px;
+            }
+            .cp-header__menuOcBtn:not(.noHover):hover{
+                background: #e03f87;
+                color: #fff;
             }
         }
         @media screen and (max-width: 1280px) and (min-width: 960px){

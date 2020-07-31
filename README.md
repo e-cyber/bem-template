@@ -1,5 +1,8 @@
 # bem-template
 
+## GitRepository
+https://github.com/e-cyber/bem-template
+
 ## プレビュー
 https://e-cyber.github.io/bem-template/
 
